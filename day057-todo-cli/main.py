@@ -1,8 +1,7 @@
 import json
 import os
 
-# main.pyと同じディレクトリにtodo_data.jsonを保存
-FILENAME = os.path.join(os.path.dirname(__file__), "todo_data.json")
+FILENAME = "todo_data.json"
 
 def load_tasks():
     if os.path.exists(FILENAME):
