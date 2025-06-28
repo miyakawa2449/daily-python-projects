@@ -30,7 +30,7 @@ Sun Mon Tue Wed Thu Fri Sat
 🗾 日本語カレンダー:
       2025年6月
  日  月  火  水  木  金  土
-                   1
+                        1
  2   3   4   5   6   7   8
  9  10  11  12  13  14  15
 16  17  18  19  20  21  22
@@ -137,14 +137,14 @@ month_calendar = cal.monthdays2calendar(year, month)
 **原因**: 曜日ヘッダーと日付の文字幅が異なる
 ```python
 # 問題のあったコード
-day_header = "  ".join(f"{day:>1}" for day in day_names)    # 1文字幅
+day_header = "  ".join(f"{day:>2}" for day in day_names)    # 1文字幅
 week_str = "  ".join(f"{day[0]:2}" if day[0] != 0 else "  " for day in week)  # 2文字幅
 ```
 
 **解決**: 文字幅を統一
 ```python
 # 修正後
-day_header = "  ".join(f"{day:>2}" for day in day_names)    # 2文字幅に統一
+day_header = "  ".join(f"{day:>1}" for day in day_names)    # 2文字幅に統一
 ```
 
 #### 🐛 **問題2: 週の開始曜日の不一致**
