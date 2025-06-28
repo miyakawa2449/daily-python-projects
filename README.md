@@ -6,7 +6,7 @@
 | 1  | 2025/06/25 | `day57-todo-cli`      | CLI ToDoリスト  | json操作、基本入出力、リスト処理        |   ✅  |
 | 2  | 2025/06/26 | `day58-timer`         | タイマーアプリ      | `time.sleep`、ループ処理        |   ✅  |
 | 3  | 2025/06/27 | `day59-calculator`    | シンプル電卓       | `eval()`、例外処理             |   ✅  |
-| 4  |            | `day60-calendar`      | カレンダー表示      | `calendar`モジュール           |      |
+| 4  | 2025/06/38 | `day60-calendar`      | カレンダー表示      | `calendar`モジュール           |   ✅  |
 | 5  |            | `day61-janken`        | じゃんけんゲーム     | `random.choice`、条件分岐      |      |
 | 6  |            | `day62-renamer`       | ファイル名一括リネーム  | `os`操作、ファイル処理             |      |
 | 7  |            | `day63-password-gen`  | パスワード生成器     | ランダム文字列生成、文字列操作           |      |
