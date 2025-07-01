@@ -206,3 +206,6 @@ $RECYCLE.BIN/
 **/data/*.json
 !**/data/sample_*.json
 !**/data/example_*.csv
+
+# 作業プログラム
+create_project.py
