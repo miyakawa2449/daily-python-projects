@@ -13,7 +13,7 @@
 | 8  | 2025/07/02 | `day64-omikuji`       | おみくじアプリ      | ランダム処理と簡易UI               |   ✅  |
 | 9  | 2025-7-03 | `day65-diary`         | 簡単な日記アプリ     | 日付別ファイル管理、文字列操作           |   ✅   |
 | 10 | 2025-07-04 | `day66-exchange-api`  | 為替レート取得      | API呼び出し、JSON解析            |   ✅  |
-| 11 |            | `day67-stopwatch`     | ストップウォッチ     | 時間測定、`datetime`           |      |
+| 11 | 2025-07-05 | `day67-stopwatch`     | ストップウォッチ     | 時間測定、`datetime`           |   ✅  |
 | 12 |            | `day68-news-scraper`  | ニュースタイトル取得   | Webスクレイピング入門              |      |
 | 13 |            | `day69-csv-summary`   | CSVの集計       | `pandas`入門、統計処理           |      |
 | 14 |            | `day70-number-game`   | 数当てゲーム       | whileループと条件分岐             |      |
