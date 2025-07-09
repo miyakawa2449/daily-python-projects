@@ -17,7 +17,7 @@
 | 12 | 2025/07/06 | `day68-news-scraper`  | ニュースタイトル取得   | Webスクレイピング入門              |   ✅  |
 | 13 | 2025/07/07 | `day69-csv-summary`   | CSVの集計       | `pandas`入門、統計処理           |   ✅  |
 | 14 | 2025/07/08 | `day70-number-game`   | 数当てゲーム       | whileループと条件分岐             |   ✅  |
-| 15 |            | `day71-bbs-cli`       | CLI掲示板風ログ    | 投稿内容をファイルに保存・一覧表示         |      |
+| 15 | 2025/07/09 | `day71-bbs-cli`       | CLI掲示板風ログ    | 投稿内容をファイルに保存・一覧表示         |   ✅  |
 | 16 |            | `day72-gui-calc`      | GUI電卓        | `tkinter`によるGUI作成         |      |
 | 17 |            | `day73-qr-maker`      | QRコード作成      | `qrcode`ライブラリの使用          |      |
 | 18 |            | `day74-img-resizer`   | 画像サイズ変換      | `Pillow`で画像処理             |      |
