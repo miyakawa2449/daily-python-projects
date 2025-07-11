@@ -19,7 +19,7 @@
 | 14 | 2025/07/08 | `day70-number-game`   | 数当てゲーム       | whileループと条件分岐             |   ✅  |
 | 15 | 2025/07/09 | `day71-bbs-cli`       | CLI掲示板風ログ    | 投稿内容をファイルに保存・一覧表示         |   ✅  |
 | 16 | 2025/07/10 | `day72-gui-calc`      | GUI電卓        | `tkinter`によるGUI作成         |   ✅  |
-| 17 |            | `day73-qr-maker`      | QRコード作成      | `qrcode`ライブラリの使用          |      |
+| 17 | 2025/07/11 | `day73-qr-maker`      | QRコード作成      | `qrcode`ライブラリの使用          |   ✅  |
 | 18 |            | `day74-img-resizer`   | 画像サイズ変換      | `Pillow`で画像処理             |      |
 | 19 |            | `day75-json-crud`     | タスク管理JSONアプリ | CRUD処理、構造化データ             |      |
 | 20 |            | `day76-chatbot-mini`  | ミニチャットボット    | ルールベース応答、文字列処理            |      |
