@@ -20,7 +20,7 @@
 | 15 | 2025/07/09 | `day71-bbs-cli`       | CLI掲示板風ログ    | 投稿内容をファイルに保存・一覧表示         |   ✅  |
 | 16 | 2025/07/10 | `day72-gui-calc`      | GUI電卓        | `tkinter`によるGUI作成         |   ✅  |
 | 17 | 2025/07/11 | `day73-qr-maker`      | QRコード作成      | `qrcode`ライブラリの使用          |   ✅  |
-| 18 |            | `day74-img-resizer`   | 画像サイズ変換      | `Pillow`で画像処理             |      |
+| 18 | 2025/07/12 | `day74-img-resizer`   | 画像サイズ変換      | `Pillow`で画像処理             |   ✅  |
 | 19 |            | `day75-json-crud`     | タスク管理JSONアプリ | CRUD処理、構造化データ             |      |
 | 20 |            | `day76-chatbot-mini`  | ミニチャットボット    | ルールベース応答、文字列処理            |      |
 | 21 |            | `day77-translator`    | 翻訳アプリ（API）   | Google/DeepL API使用        |      |
@@ -31,5 +31,5 @@
 | 26 |            | `day82-ogp-maker`     | OGP画像ジェネレータ  | `Pillow`で動的画像生成           |      |
 | 27 |            | `day83-audio-conv`    | 音声ファイル変換     | `pydub`による形式変換            |      |
 | 28 |            | `day84-sendmail`      | メール送信スクリプト   | `smtplib`、Gmail連携         |      |
-| 29 |            | `day85-web-server`    | ローカルWebサーバ   | `http.server`モジュール        |      |
+| 29 |            | `day85-web-server`    | ローカルWebサーバ   | `http.server`モジュール        |       |
 | 30 |            | `day86-gpt-chat`      | GPTと対話アプリ    | OpenAI API使用、ChatGPT風UI   |      |
