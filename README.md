@@ -21,7 +21,7 @@
 | 16 | 2025/07/10 | `day72-gui-calc`      | GUI電卓        | `tkinter`によるGUI作成         |   ✅  |
 | 17 | 2025/07/11 | `day73-qr-maker`      | QRコード作成      | `qrcode`ライブラリの使用          |   ✅  |
 | 18 | 2025/07/12 | `day74-img-resizer`   | 画像サイズ変換      | `Pillow`で画像処理             |   ✅  |
-| 19 |            | `day75-json-crud`     | タスク管理JSONアプリ | CRUD処理、構造化データ             |      |
+| 19 | 2025/07/13 | `day75-json-crud`     | タスク管理JSONアプリ | CRUD処理、構造化データ             |   ✅  |
 | 20 |            | `day76-chatbot-mini`  | ミニチャットボット    | ルールベース応答、文字列処理            |      |
 | 21 |            | `day77-translator`    | 翻訳アプリ（API）   | Google/DeepL API使用        |      |
 | 22 |            | `day78-voice2text`    | 音声認識アプリ      | `speech_recognition`ライブラリ |      |

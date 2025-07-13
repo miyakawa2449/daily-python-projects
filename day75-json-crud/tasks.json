@@ -1,0 +1,18 @@
+[
+  {
+    "task": "GPU交換",
+    "done": true
+  },
+  {
+    "task": "グラボドライバ更新",
+    "done": false
+  },
+  {
+    "task": "掃除",
+    "done": true
+  },
+  {
+    "task": "勉強",
+    "done": false
+  }
+]
