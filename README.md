@@ -23,7 +23,7 @@
 | 18 | 2025/07/12 | `day74-img-resizer`   | 画像サイズ変換      | `Pillow`で画像処理             |   ✅  |
 | 19 | 2025/07/13 | `day75-json-crud`     | タスク管理JSONアプリ | CRUD処理、構造化データ             |   ✅  |
 | 20 | 2025/07/14 | `day76-chatbot-mini`  | ミニチャットボット    | ルールベース応答、文字列処理            |   ✅  |
-| 21 |            | `day77-translator`    | 翻訳アプリ（API）   | Google/DeepL API使用        |      |
+| 21 | 2025.07/15 | `day77-translator`    | 翻訳アプリ（API）   | Google/DeepL API使用        |   ✅  |
 | 22 |            | `day78-voice2text`    | 音声認識アプリ      | `speech_recognition`ライブラリ |      |
 | 23 |            | `day79-pdf-counter`   | PDFページ数カウンタ  | `PyPDF2`や`fitz`使用         |      |
 | 24 |            | `day80-household-csv` | シンプル家計簿      | 入力→CSV保存→集計               |      |
