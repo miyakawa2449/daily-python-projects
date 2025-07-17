@@ -206,3 +206,9 @@ $RECYCLE.BIN/
 **/data/*.json
 !**/data/sample_*.json
 !**/data/example_*.csv
+
+# 著作物
+day79-pdf-counter/ningen_isu.pdf
+day79-pdf-counter/PyMuPDF.pdf
+day79-pdf-counter/PyMuPDF.pages
+day79-pdf-counter/page1_img1.png
