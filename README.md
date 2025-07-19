@@ -27,7 +27,7 @@
 | 22 | 2025/07/16 | `day78-voice2text`    | 音声認識アプリ      | `speech_recognition`ライブラリ |   ✅  |
 | 23 | 2025/07/17 | `day79-pdf-counter`   | PDFページ数カウンタ  | `PyPDF2`や`fitz`使用         |    ✅ |
 | 24 | 2025/07/18 | `day80-household-csv` | シンプル家計簿      | 入力→CSV保存→集計               |   ✅  |
-| 25 |            | `day81-img-crawler`   | 画像収集スクレイパー   | スクレイピングと画像DL              |      |
+| 25 | 2025/07/19 | `day81-img-crawler`   | 画像収集スクレイパー   | スクレイピングと画像DL              |    ✅ |
 | 26 |            | `day82-ogp-maker`     | OGP画像ジェネレータ  | `Pillow`で動的画像生成           |      |
 | 27 |            | `day83-audio-conv`    | 音声ファイル変換     | `pydub`による形式変換            |      |
 | 28 |            | `day84-sendmail`      | メール送信スクリプト   | `smtplib`、Gmail連携         |      |

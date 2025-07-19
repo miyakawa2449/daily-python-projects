@@ -206,6 +206,7 @@ $RECYCLE.BIN/
 **/data/*.json
 !**/data/sample_*.json
 !**/data/example_*.csv
+day81-img-crawler/downloaded_images
 
 # 著作物
 day79-pdf-counter/ningen_isu.pdf
