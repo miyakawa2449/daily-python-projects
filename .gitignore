@@ -213,3 +213,14 @@ day79-pdf-counter/ningen_isu.pdf
 day79-pdf-counter/PyMuPDF.pdf
 day79-pdf-counter/PyMuPDF.pages
 day79-pdf-counter/page1_img1.png
+day*/*.png
+day*/*.jpg
+day*/*.jpeg
+day*/*.gif
+day*/*.webp
+day*/*.svg
+day*/fonts/*.ttf
+day*/fonts/*.otf
+day*/fonts/*.woff
+day*/fonts/*.woff2
+test
