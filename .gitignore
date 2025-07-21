@@ -224,3 +224,9 @@ day*/fonts/*.otf
 day*/fonts/*.woff
 day*/fonts/*.woff2
 test
+day*/*.mp3
+day*/*.wav
+day*/*.ogg
+day*/*.flac
+day*/*.aac
+day*/*.m4a
