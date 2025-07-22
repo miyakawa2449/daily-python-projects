@@ -30,6 +30,6 @@
 | 25 | 2025/07/19 | `day81-img-crawler`   | 画像収集スクレイパー   | スクレイピングと画像DL              |    ✅ |
 | 26 | 2025/07/20 | `day82-ogp-maker`     | OGP画像ジェネレータ  | `Pillow`で動的画像生成           |    ✅ |
 | 27 | 2025/07/21 | `day83-audio-conv`    | 音声ファイル変換     | `pydub`による形式変換            |    ✅ |
-| 28 |            | `day84-sendmail`      | メール送信スクリプト   | `smtplib`、Gmail連携         |      |
+| 28 | 2025/07/22 | `day84-sendmail`      | メール送信スクリプト   | `smtplib`、Gmail連携         |      ✅|
 | 29 |            | `day85-web-server`    | ローカルWebサーバ   | `http.server`モジュール        |       |
 | 30 |            | `day86-gpt-chat`      | GPTと対話アプリ    | OpenAI API使用、ChatGPT風UI   |      |
