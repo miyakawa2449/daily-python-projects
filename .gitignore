@@ -199,7 +199,8 @@ $RECYCLE.BIN/
 **/config.json
 **/secrets.json
 **/api_keys.json
-**client_secret_838287195545-lo7c5t7it8efta15o4t30h00v2vmskc3.apps.googleusercontent.com.json
+**/client_secret_838287195545-lo7c5t7it8efta15o4t30h00v2vmskc3.apps.googleusercontent.com.json
+day84-sendmail/token.json
 
 # データファイル
 **/data/*.csv
