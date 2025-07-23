@@ -232,3 +232,4 @@ day*/*.ogg
 day*/*.flac
 day*/*.aac
 day*/*.m4a
+day85-web-server/public/*.*
