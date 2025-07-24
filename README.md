@@ -32,4 +32,4 @@
 | 27 | 2025/07/21 | `day83-audio-conv`    | 音声ファイル変換     | `pydub`による形式変換            |    ✅ |
 | 28 | 2025/07/22 | `day84-sendmail`      | メール送信スクリプト   | `smtplib`、Gmail連携         |      ✅|
 | 29 | 2025/07/23 | `day85-web-server`    | ローカルWebサーバ   | `http.server`モジュール        |      ✅|
-| 30 |            | `day86-gpt-chat`      | GPTと対話アプリ    | OpenAI API使用、ChatGPT風UI   |      |
+| 30 | 2025/07/23 | `day86-gpt-chat`      | GPTと対話アプリ    | OpenAI API使用、ChatGPT風UI   |    ✅ |
