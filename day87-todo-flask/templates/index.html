@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 ToDo Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 ToDoリスト</h1>
+        
+        <div class="form-container">
+            <form method="POST">
+                <input type="text" name="task" placeholder="新しいタスクを入力..." required>
+                <button type="submit">追加</button>
+            </form>
+        </div>
+        
+        <div class="todo-container">
+            {% if todos %}
+                <ul class="todo-list">
+                    {% for task in todos %}
+                        <li class="todo-item">
+                            <span class="task-text">{{ task }}</span>
+                            <a href="{{ url_for('delete_task', index=loop.index0) }}" class="delete-btn">削除</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <p class="task-count">📊 合計: {{ todos|length }}個のタスク</p>
+            {% else %}
+                <div class="empty-state">
+                    <div class="empty-icon">📝</div>
+                    <h3>まだタスクがありません</h3>
+                    <p>上のフォームから新しいタスクを追加してください</p>
+                </div>
+            {% endif %}
+        </div>
+        
+        <footer>
+            <p>Flask ToDo App - Simple & Clean</p>
+        </footer>
+    </div>
+</body>
+</html>
+

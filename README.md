@@ -1,3 +1,23 @@
+🗓 Python 100日チャレンジ（Day 87〜100）
+開始日：2025年7月25日（金）
+| #  | 日付         | フォルダ名                   | プロジェクト名               | 主な内容・学習ポイント                          | 完了 ✅ |
+| -- | ---------- | ----------------------- | --------------------- | ------------------------------------ | ---- |
+| 31 | 2025/07/25 | `day87-todo-flask`      | Web ToDoアプリ           | Flask入門、HTMLテンプレート、フォーム処理            |      |
+| 32 | 2025/07/26 | `day88-quote-viewer`    | 名言表示アプリ               | JSON読込、Jinja2テンプレート、ルーティング           |      |
+| 33 | 2025/07/27 | `day89-color-picker`    | カラーピッカーWebツール         | HTML5+Flask連携、フォームのリアルタイム処理          |      |
+| 34 | 2025/07/28 | `day90-fastapi-basic`   | FastAPIによるREST API    | Web API基礎、OpenAPI Docs、自動ドキュメント      |      |
+| 35 | 2025/07/29 | `day91-streamlit-form`  | 入力フォーム＋結果表示           | Streamlit、インタラクティブUI                 |      |
+| 36 | 2025/07/30 | `day92-html2pdf`        | Web入力→PDF出力           | PDF生成（`reportlab` or `weasyprint`）   |      |
+| 37 | 2025/07/31 | `day93-img-editor`      | ブラウザ画像エディタ            | Pillow＋Flask、画像アップロード                |      |
+| 38 | 2025/08/01 | `day94-weather-checker` | 天気表示Webアプリ            | API連携（OpenWeatherMap）、非同期処理          |      |
+| 39 | 2025/08/02 | `day95-chat-ui`         | ChatGPT風UI（Streamlit） | OpenAI連携、シンプルチャットUI構築                |      |
+| 40 | 2025/08/03 | `day96-db-crud-app`     | MySQL連携CRUDアプリ        | SQLAlchemy + Flask、DB構造の実装と操作        |      |
+| 41 | 2025/08/04 | `day97-image-gallery`   | 画像ギャラリー               | ファイル管理＋Web表示、アップロード処理                |      |
+| 42 | 2025/08/05 | `day98-markdown-blog`   | Markdown対応ブログ         | Flask-Markdown、ファイル読み込み              |      |
+| 43 | 2025/08/06 | `day99-account-login`   | ログイン認証付きアプリ           | Flask-Login、セッション管理                  |      |
+| 44 | 2025/08/07 | `day100-fullstack-todo` | ✅ 集大成：DB連携ToDoアプリ     | Flask + MySQL + Bootstrap + CRUD完全実装 |      |
+
+
 📝 Python 100日チャレンジ（Day 57〜86）
 開始日：2024年6月25日（57日目）よりカウント
 
