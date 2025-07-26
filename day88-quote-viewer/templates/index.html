@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>📜 今日の名言</h1>
+    <blockquote>"{{ quote.quote }}"</blockquote>
+    <p>（{{ quote.japanese }}）</p>
+    <cite>— {{ quote.author }}</cite>
+</html>

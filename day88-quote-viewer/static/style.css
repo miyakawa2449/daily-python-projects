@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+blockquote {
+    font-size: 1.5em;
+    color: #555;
+}
+cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #888;
+}
+p {
+    font-style: italic;
+}
