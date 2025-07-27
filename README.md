@@ -4,7 +4,7 @@
 | -- | ---------- | ----------------------- | --------------------- | ------------------------------------ | ---- |
 | 31 | 2025/07/25 | `day87-todo-flask`      | Web ToDoアプリ           | Flask入門、HTMLテンプレート、フォーム処理            |     ✅|
 | 32 | 2025/07/26 | `day88-quote-viewer`    | 名言表示アプリ               | JSON読込、Jinja2テンプレート、ルーティング           |     ✅|
-| 33 |            | `day89-color-picker`    | カラーピッカーWebツール         | HTML5+Flask連携、フォームのリアルタイム処理          |      |
+| 33 | 2025/07/27 | `day89-color-picker`    | カラーピッカーWebツール         | HTML5+Flask連携、フォームのリアルタイム処理          |    ✅  |
 | 34 |            | `day90-fastapi-basic`   | FastAPIによるREST API    | Web API基礎、OpenAPI Docs、自動ドキュメント      |      |
 | 35 |            | `day91-streamlit-form`  | 入力フォーム＋結果表示           | Streamlit、インタラクティブUI                 |      |
 | 36 |            | `day92-html2pdf`        | Web入力→PDF出力           | PDF生成（`reportlab` or `weasyprint`）   |      |

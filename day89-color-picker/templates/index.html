@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>カラーピッカー</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>カラーピッカーWebツール</h1>
+    <input type="color" id="colorPicker">
+    <p id="colorValue">選択された色はここに表示されます。</p>
+
+    <script>
+        const colorPicker = document.getElementById('colorPicker');
+        const colorValue = document.getElementById('colorValue');
+
+        colorPicker.addEventListener('input', async function () {
+            const selectedColor = this.value;
+
+            const response = await fetch('/update-color', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ color: selectedColor })
+            });
+
+            const data = await response.json();
+            colorValue.textContent = data.message;
+            document.body.style.backgroundColor = data.color;
+        });
+    </script>
+</body>
+</html>

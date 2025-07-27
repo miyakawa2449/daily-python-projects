@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    transition: background-color 0.3s;
+}
+
+h1 {
+    color: #333;
+}
+
+#colorValue {
+    margin-top: 1rem;
+    font-weight: bold;
+}
