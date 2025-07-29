@@ -6,7 +6,7 @@
 | 32 | 2025/07/26 | `day88-quote-viewer`    | 名言表示アプリ               | JSON読込、Jinja2テンプレート、ルーティング           |     ✅|
 | 33 | 2025/07/27 | `day89-color-picker`    | カラーピッカーWebツール         | HTML5+Flask連携、フォームのリアルタイム処理          |    ✅  |
 | 34 | 2025/07/28 | `day90-fastapi-basic`   | FastAPIによるREST API    | Web API基礎、OpenAPI Docs、自動ドキュメント      |    ✅ |
-| 35 |            | `day91-streamlit-form`  | 入力フォーム＋結果表示           | Streamlit、インタラクティブUI                 |      |
+| 35 | 2025/07/29 | `day91-streamlit-form`  | 入力フォーム＋結果表示           | Streamlit、インタラクティブUI                 |     ✅|
 | 36 |            | `day92-html2pdf`        | Web入力→PDF出力           | PDF生成（`reportlab` or `weasyprint`）   |      |
 | 37 |            | `day93-img-editor`      | ブラウザ画像エディタ            | Pillow＋Flask、画像アップロード                |      |
 | 38 |            | `day94-weather-checker` | 天気表示Webアプリ            | API連携（OpenWeatherMap）、非同期処理          |      |
