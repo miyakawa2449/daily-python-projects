@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PDF作成フォーム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="form-page">
+    <div class="form-container">
+        <div class="form-header">
+            <h1 class="form-title">📄 PDF作成フォーム</h1>
+            <p class="form-subtitle">必要な情報を入力してPDFを生成しましょう</p>
+        </div>
+        
+        <form method="post" class="pdf-form">
+            <div class="form-group">
+                <label class="form-label" for="name">
+                    <span class="label-icon">👤</span>
+                    名前:
+                </label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="山田太郎" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="title">
+                    <span class="label-icon">📝</span>
+                    タイトル:
+                </label>
+                <input type="text" id="title" name="title" class="form-input" placeholder="月次レポート" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="date">
+                    <span class="label-icon">📅</span>
+                    日付:
+                </label>
+                <input type="date" id="date" name="date" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="body">
+                    <span class="label-icon">📄</span>
+                    本文:
+                </label>
+                <textarea id="body" name="body" rows="10" class="form-textarea" 
+                         placeholder="ここに本文を入力してください...&#10;&#10;改行も自由に使えます。&#10;・箇条書きも可能&#10;・詳細な内容を記述できます" required></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">
+                    <span class="btn-icon">🚀</span>
+                    PDFを作成する
+                </button>
+            </div>
+        </form>
+        
+        <div class="form-footer">
+            <p>💡 生成されたPDFは自動でダウンロードされます</p>
+        </div>
+    </div>
+</body>
+</html>
