@@ -233,3 +233,4 @@ day*/*.flac
 day*/*.aac
 day*/*.m4a
 day85-web-server/public/*.*
+day93-img-editor/static/uploads/*.*

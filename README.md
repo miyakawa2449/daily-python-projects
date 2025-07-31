@@ -8,7 +8,7 @@
 | 34 | 2025/07/28 | `day90-fastapi-basic`   | FastAPIによるREST API    | Web API基礎、OpenAPI Docs、自動ドキュメント      |    ✅ |
 | 35 | 2025/07/29 | `day91-streamlit-form`  | 入力フォーム＋結果表示           | Streamlit、インタラクティブUI                 |     ✅|
 | 36 | 2025/07/30 | `day92-html2pdf`        | Web入力→PDF出力           | PDF生成（`reportlab` or `weasyprint`）   |      ✅ |
-| 37 |            | `day93-img-editor`      | ブラウザ画像エディタ            | Pillow＋Flask、画像アップロード                |      |
+| 37 | 2025/07/31 | `day93-img-editor`      | ブラウザ画像エディタ            | Pillow＋Flask、画像アップロード                |    ✅ |
 | 38 |            | `day94-weather-checker` | 天気表示Webアプリ            | API連携（OpenWeatherMap）、非同期処理          |      |
 | 39 |            | `day95-chat-ui`         | ChatGPT風UI（Streamlit） | OpenAI連携、シンプルチャットUI構築                |      |
 | 40 |            | `day96-db-crud-app`     | MySQL連携CRUDアプリ        | SQLAlchemy + Flask、DB構造の実装と操作        |      |

@@ -1,0 +1,72 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 ブラウザ画像エディタ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 ブラウザ画像エディタ</h1>
+            <p>画像をアップロードして編集しましょう</p>
+        </header>
+
+        <main class="main">
+            <!-- アップロードエリア -->
+            <div class="upload-section" id="uploadSection">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <div class="upload-icon">📁</div>
+                        <h3>画像をドラッグ&ドロップ</h3>
+                        <p>または</p>
+                        <label for="fileInput" class="upload-btn">
+                            ファイルを選択
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                        </label>
+                        <div class="file-info">
+                            <small>対応形式: JPG, PNG, GIF, WEBP（最大10MB）</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- エディターエリア（最初は非表示） -->
+            <div class="editor-section" id="editorSection" style="display: none;">
+                <div class="editor-container">
+                    <!-- 左側：コントロールパネル -->
+                    <div class="control-panel">
+                        <h3>📝 編集ツール</h3>
+                        
+                        <div class="tool-group">
+                            <h4>🔄 基本操作</h4>
+                            <button class="tool-btn" onclick="rotateImage(90)">↻ 右回転</button>
+                            <button class="tool-btn" onclick="rotateImage(-90)">↺ 左回転</button>
+                            <button class="tool-btn" onclick="resetImage()">🔄 リセット</button>
+                        </div>
+
+                        <div class="tool-group">
+                            <h4>💾 保存</h4>
+                            <button class="download-btn" onclick="downloadImage()">📥 ダウンロード</button>
+                        </div>
+                    </div>
+
+                    <!-- 右側：画像プレビュー -->
+                    <div class="preview-panel">
+                        <div class="image-container">
+                            <img id="previewImage" src="" alt="プレビュー">
+                        </div>
+                        <div class="image-info" id="imageInfo">
+                            <!-- 画像情報が表示される -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+</body>
+</html>
