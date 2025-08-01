@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ 天気予報アプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌤️ 天気予報</h1>
+            <p>日本全国の現在の天気と5日間予報</p>
+        </header>
+
+        <!-- 都市選択 -->
+        <div class="city-selector">
+            <label for="citySelect">都市を選択:</label>
+            <select id="citySelect">
+                {% for city_ja, city_en in cities.items() %}
+                <option value="{{ city_ja }}" {% if city_ja == '東京' %}selected{% endif %}>
+                    {{ city_ja }}
+                </option>
+                {% endfor %}
+            </select>
+            <button id="updateBtn" onclick="updateWeather()">🔄 更新</button>
+        </div>
+
+        <!-- 現在の天気 -->
+        <div class="current-weather" id="currentWeather">
+            <div class="loading" id="loadingCurrent">
+                <div class="spinner">⏳</div>
+                <p>天気データを取得中...</p>
+            </div>
+            
+            <div class="weather-card" id="weatherCard" style="display: none;">
+                <div class="weather-main">
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="" alt="天気アイコン">
+                    </div>
+                    <div class="weather-info">
+                        <h2 id="cityName">東京</h2>
+                        <p id="weatherDescription">晴れ</p>
+                        <div class="temperature">
+                            <span id="temperature">25</span>°C
+                        </div>
+                        <p class="feels-like">体感温度: <span id="feelsLike">28</span>°C</p>
+                    </div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-label">💧 湿度</span>
+                        <span id="humidity">65%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🌬️ 風速</span>
+                        <span id="windSpeed">3.2 m/s</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🔽 気圧</span>
+                        <span id="pressure">1013 hPa</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">👁️ 視程</span>
+                        <span id="visibility">10 km</span>
+                    </div>
+                </div>
+                
+                <div class="update-time">
+                    最終更新: <span id="updateTime">2025/08/01 14:30</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5日間予報 -->
+        <div class="forecast-section">
+            <h3>📅 5日間予報</h3>
+            <div class="loading" id="loadingForecast">
+                <div class="spinner">⏳</div>
+                <p>予報データを取得中...</p>
+            </div>
+            
+            <div class="forecast-container" id="forecastContainer" style="display: none;">
+                <!-- 予報カードがJavaScriptで挿入される -->
+            </div>
+        </div>
+
+        <!-- エラー表示 -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <h3>⚠️ エラー</h3>
+            <p id="errorText">天気データの取得に失敗しました</p>
+            <button onclick="updateWeather()">再試行</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+</body>
+</html>
