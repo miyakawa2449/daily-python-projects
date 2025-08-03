@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タスク管理 - Day96 CRUD App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <div class="header fade-in">
+            <h1>📝 タスク管理システム</h1>
+            <p>効率的にタスクを管理して、生産性を向上させましょう</p>
+        </div>
+
+        <!-- 新規追加フォーム -->
+        <div class="card fade-in">
+            <h3 style="margin-bottom: 20px; color: #495057; text-align: center;">
+                ➕ 新しいタスクを追加
+            </h3>
+            <form method="POST" action="{{ url_for('add') }}" id="addTaskForm">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        name="title" 
+                        class="form-control" 
+                        placeholder="新しいタスクを入力してください..." 
+                        required 
+                        maxlength="200"
+                        id="newTaskTitle">
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        📝 タスクを追加
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- タスクリスト -->
+        <div class="card fade-in">
+            {% if tasks %}
+                <h2 style="margin-bottom: 25px; color: #495057; font-weight: 500;">
+                    📋 タスク一覧 <span style="font-size: 0.8em; color: #6c757d;">({{ tasks|length }}件)</span>
+                </h2>
+                
+                <ul class="task-list">
+                    {% for task in tasks %}
+                    <li class="task-item {% if task.done %}completed{% endif %}" data-animation-delay="{{ loop.index0 }}">
+                        <div class="task-content">
+                            <div class="task-title {% if task.done %}completed{% endif %}">
+                                {{ task.title }}
+                            </div>
+                            <div class="task-status {% if task.done %}status-completed{% else %}status-pending{% endif %}">
+                                {% if task.done %}
+                                    ✅ 完了済み
+                                {% else %}
+                                    ⏳ 未完了
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="task-actions">
+                            <a href="{{ url_for('edit', task_id=task.id) }}" class="btn btn-warning btn-sm">
+                                ✏️ 編集
+                            </a>
+                            <a href="{{ url_for('complete', task_id=task.id) }}" class="btn btn-success btn-sm">
+                                ✅ 完了
+                            </a>
+                            <a href="{{ url_for('delete', task_id=task.id) }}" 
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('このタスクを削除してもよろしいですか？')">
+                                🗑️ 削除
+                            </a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <!-- サマリー -->
+                {% set completed_count = tasks | selectattr('done') | list | length %}
+                {% set pending_count = tasks | rejectattr('done') | list | length %}
+                
+                <div class="task-summary">
+                    <div class="summary-stats">
+                        <div class="stat-item">
+                            <div class="stat-number completed">{{ completed_count }}</div>
+                            <div class="stat-label">完了</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number pending">{{ pending_count }}</div>
+                            <div class="stat-label">未完了</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number total">{{ tasks|length }}</div>
+                            <div class="stat-label">総数</div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <!-- 空の状態 -->
+                <div class="empty-state">
+                    <div class="empty-state-icon">📝</div>
+                    <h3>タスクがありません</h3>
+                    <p>最初のタスクを追加して、管理を始めましょう！</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // アニメーション遅延をJavaScriptで設定
+            const taskItems = document.querySelectorAll('.task-item');
+            taskItems.forEach((item, index) => {
+                const delay = item.dataset.animationDelay || index;
+                item.style.animationDelay = `${delay * 0.1}s`;
+                item.classList.add('slide-in');
+            });
+
+            // ホバー効果
+            taskItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+
+            // 削除確認の強化
+            const deleteButtons = document.querySelectorAll('.btn-danger');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!confirm('⚠️ 本当にこのタスクを削除しますか？\nこの操作は取り消せません。')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            // 新規タスク追加フォームの強化
+            const addTaskForm = document.getElementById('addTaskForm');
+            const newTaskInput = document.getElementById('newTaskTitle');
+
+            addTaskForm.addEventListener('submit', function(e) {
+                const title = newTaskInput.value.trim();
+                if (title === '') {
+                    alert('⚠️ タスクタイトルを入力してください。');
+                    newTaskInput.focus();
+                    e.preventDefault();
+                    return;
+                }
+
+                if (title.length > 200) {
+                    alert('⚠️ タスクタイトルは200文字以内で入力してください。');
+                    newTaskInput.focus();
+                    e.preventDefault();
+                    return;
+                }
+
+                // 送信ボタンを一時的に無効化
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '📝 追加中...';
+            });
+
+            // Enterキーでの送信
+            newTaskInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    addTaskForm.submit();
+                }
+            });
+
+            // 文字数カウント（オプション）
+            newTaskInput.addEventListener('input', function() {
+                const length = this.value.length;
+                if (length > 180) {
+                    this.style.borderColor = '#ffc107';
+                } else if (length > 200) {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#34495e';
+                }
+            });
+
+            // フォーカス時のアニメーション
+            newTaskInput.addEventListener('focus', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+
+            newTaskInput.addEventListener('blur', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

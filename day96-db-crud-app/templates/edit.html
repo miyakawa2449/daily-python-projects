@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タスク編集 - Day96 CRUD App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
+</head>
+<body>
+    <div class="edit-container">
+        <!-- ヘッダー -->
+        <div class="edit-header fade-in">
+            <h1>✏️ タスク編集</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">
+                タスクの情報を更新してください
+            </p>
+        </div>
+
+        <!-- 編集フォーム -->
+        <div class="edit-form fade-in">
+            <form method="POST" id="editForm">
+                <!-- タスクタイトル -->
+                <div class="form-group">
+                    <label for="title" class="form-label">
+                        📝 タスクタイトル <span style="color: #dc3545;">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="title"
+                        name="title" 
+                        class="form-control"
+                        value="{{ task.title }}" 
+                        required
+                        placeholder="タスクの内容を入力してください"
+                        maxlength="200">
+                    <div style="font-size: 0.85rem; color: #6c757d; margin-top: 5px;">
+                        <span id="charCount">{{ task.title|length if task.title else 0 }}</span>/200文字
+                    </div>
+                </div>
+
+                <!-- 完了状況 -->
+                <div class="form-group">
+                    <label class="form-label">📊 完了状況</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-custom">
+                            <input 
+                                type="checkbox" 
+                                id="done"
+                                name="done" 
+                                {% if task.done %}checked{% endif %}>
+                            <label for="done">
+                                <span id="statusText">
+                                    {% if task.done %}
+                                        ✅ このタスクは完了しています
+                                    {% else %}
+                                        ⏳ このタスクは未完了です
+                                    {% endif %}
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- フォームアクション -->
+                <div class="form-actions">
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                        ← 戻る
+                    </a>
+                    <button type="submit" class="btn btn-primary" id="saveBtn">
+                        💾 更新する
+                    </button>
+                </div>
+            </form>
+
+            <!-- 追加操作 -->
+            <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #e9ecef;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                    <div style="color: #6c757d; font-size: 0.9rem;">
+                        タスクID: {{ task.id }}
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="{{ url_for('delete', task_id=task.id) }}" 
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('⚠️ 本当にこのタスクを削除しますか？')">
+                            🗑️ 削除
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleInput = document.getElementById('title');
+            const doneCheckbox = document.getElementById('done');
+            const statusText = document.getElementById('statusText');
+            const charCount = document.getElementById('charCount');
+            const saveBtn = document.getElementById('saveBtn');
+
+            // 文字数カウント
+            titleInput.addEventListener('input', function() {
+                charCount.textContent = this.value.length;
+                if (this.value.length > 180) {
+                    charCount.style.color = '#dc3545';
+                } else {
+                    charCount.style.color = '#6c757d';
+                }
+            });
+
+            // 完了状況の表示更新
+            doneCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    statusText.innerHTML = '✅ このタスクは完了しています';
+                    statusText.style.color = '#28a745';
+                } else {
+                    statusText.innerHTML = '⏳ このタスクは未完了です';
+                    statusText.style.color = '#ffc107';
+                }
+            });
+
+            // フォーム送信時の確認
+            document.getElementById('editForm').addEventListener('submit', function(e) {
+                if (titleInput.value.trim() === '') {
+                    alert('⚠️ タスクタイトルを入力してください。');
+                    titleInput.focus();
+                    e.preventDefault();
+                    return;
+                }
+
+                // 保存ボタンの表示変更
+                saveBtn.innerHTML = '💾 保存中...';
+                saveBtn.disabled = true;
+            });
+
+            // ショートカットキー
+            document.addEventListener('keydown', function(e) {
+                // Ctrl+S で保存
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    document.getElementById('editForm').submit();
+                }
+                // Esc でキャンセル
+                if (e.key === 'Escape') {
+                    if (confirm('変更を破棄して戻りますか？')) {
+                        window.location.href = "{{ url_for('index') }}";
+                    }
+                }
+            });
+
+            // フォーカス時のアニメーション
+            titleInput.addEventListener('focus', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            titleInput.addEventListener('blur', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

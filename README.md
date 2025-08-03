@@ -11,7 +11,7 @@
 | 37 | 2025/07/31 | `day93-img-editor`      | ブラウザ画像エディタ            | Pillow＋Flask、画像アップロード                |    ✅ |
 | 38 | 2025/08/01 | `day94-weather-checker` | 天気表示Webアプリ            | API連携（OpenWeatherMap）、非同期処理          |    ✅  |
 | 39 | 2025/08/02 | `day95-chat-ui`         | ChatGPT風UI（Streamlit） | OpenAI連携、シンプルチャットUI構築                |     ✅|
-| 40 |            | `day96-db-crud-app`     | MySQL連携CRUDアプリ        | SQLAlchemy + Flask、DB構造の実装と操作        |      |
+| 40 | 2025/08/03 | `day96-db-crud-app`     | DB連携CRUDアプリ        | SQLAlchemy + Flask、DB構造の実装と操作        |     ✅|
 | 41 |            | `day97-image-gallery`   | 画像ギャラリー               | ファイル管理＋Web表示、アップロード処理                |      |
 | 42 |            | `day98-markdown-blog`   | Markdown対応ブログ         | Flask-Markdown、ファイル読み込み              |      |
 | 43 |            | `day99-account-login`   | ログイン認証付きアプリ           | Flask-Login、セッション管理                  |      |
