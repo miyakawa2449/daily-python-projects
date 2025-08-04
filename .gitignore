@@ -234,3 +234,9 @@ day*/*.aac
 day*/*.m4a
 day85-web-server/public/*.*
 day93-img-editor/static/uploads/*.*
+
+# day97-image-gallery画像ファイル除外（ディレクトリは保持）
+day97-image-gallery/uploads/*
+!day97-image-gallery/uploads/.gitkeep
+day97-image-gallery/thumbnails/*
+!day97-image-gallery/thumbnails/.gitkeep
