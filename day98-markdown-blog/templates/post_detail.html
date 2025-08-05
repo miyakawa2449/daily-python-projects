@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - Markdown Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+                <h1>{{ post.title }}</h1>
+                <p class="post-meta">
+                    作成日: {{ post.created_at.strftime('%Y年%m月%d日 %H:%M') }}
+                    {% if post.updated_at != post.created_at %}
+                    | 更新日: {{ post.updated_at.strftime('%Y年%m月%d日 %H:%M') }}
+                    {% endif %}
+                </p>
+            </div>
+            <div>
+                <a href="{{ url_for('edit_post', id=post.id) }}" class="btn btn-outline-secondary">編集</a>
+                <form method="POST" action="{{ url_for('delete_post', id=post.id) }}" class="d-inline" 
+                      onsubmit="return confirm('この記事を削除してもよろしいですか？')">
+                    <button type="submit" class="btn btn-outline-danger">削除</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="markdown-content">
+                    {{ html_content | safe }}
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-outline-primary">← 記事一覧に戻る</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

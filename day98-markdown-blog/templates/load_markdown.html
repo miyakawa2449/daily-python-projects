@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Markdown読み込み - Markdown Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Markdownファイル読み込み</h1>
+        <p class="text-muted">既存のMarkdownファイルをブログ記事として読み込みます。</p>
+        
+        <form method="POST">
+            <div class="mb-3">
+                <label for="file_path" class="form-label">ファイルパス</label>
+                <input type="text" class="form-control" id="file_path" name="file_path" required
+                       placeholder="/path/to/your/markdown/file.md">
+                <div class="form-text">
+                    読み込みたいMarkdownファイルの絶対パスまたは相対パスを入力してください。
+                </div>
+            </div>
+            
+            <div class="alert alert-info">
+                <h6>使用方法:</h6>
+                <ul class="mb-0">
+                    <li>ファイル名（拡張子を除く）がタイトルとして使用されます</li>
+                    <li>ファイルの内容がMarkdownとしてパースされます</li>
+                    <li>絶対パス（例: /Users/username/documents/article.md）または相対パス（例: ./docs/readme.md）が使用できます</li>
+                </ul>
+            </div>
+            
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">読み込む</button>
+                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">キャンセル</a>
+            </div>
+        </form>
+        
+        <hr class="my-5">
+        
+        <div class="card">
+            <div class="card-header">
+                <h5>サンプルMarkdownファイルを作成</h5>
+            </div>
+            <div class="card-body">
+                <p>テスト用のMarkdownファイルを作成して読み込みを試すことができます。</p>
+                <button type="button" class="btn btn-outline-info" onclick="createSampleFile()">サンプルファイルを作成</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function createSampleFile() {
+    const content = `# サンプル記事
+
+これはMarkdownファイル読み込み機能のテスト記事です。
+
+## 見出し2
+
+**太字のテキスト**や*斜体のテキスト*を含むことができます。
+
+### リスト
+
+- 項目1
+- 項目2
+- 項目3
+
+### コードブロック
+
+\`\`\`python
+def hello_world():
+    print("Hello, World!")
+    return "success"
+\`\`\`
+
+### リンク
+
+[Pythonの公式サイト](https://www.python.org/)
+
+---
+
+*このファイルは自動生成されました。*`;
+
+    const blob = new Blob([content], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'sample_article.md';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    alert('sample_article.mdファイルがダウンロードされました。このファイルのパスを上記のフォームに入力して読み込みをテストできます。');
+}
+</script>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}新規投稿 - Markdown Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>新規投稿</h1>
+        
+        <form method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">タイトル</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="content" class="form-label">内容 (Markdown形式)</label>
+                <textarea class="form-control" id="content" name="content" rows="15" required
+                          placeholder="# 見出し1
+
+## 見出し2
+
+**太字** や *斜体* のテキスト
+
+- リスト項目1
+- リスト項目2
+
+```python
+# コードブロック
+def hello():
+    print('Hello, World!')
+```
+
+[リンク](https://example.com)"></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <small class="form-text text-muted">
+                    Markdown記法を使用できます。見出し、太字、斜体、リスト、コードブロック、リンクなどが利用可能です。
+                </small>
+            </div>
+            
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">投稿する</button>
+                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">キャンセル</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById('content').addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+});
+</script>
+{% endblock %}

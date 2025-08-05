@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}編集: {{ post.title }} - Markdown Blog{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>記事を編集</h1>
+        
+        <form method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">タイトル</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ post.title }}" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="content" class="form-label">内容 (Markdown形式)</label>
+                <textarea class="form-control" id="content" name="content" rows="15" required>{{ post.markdown_content }}</textarea>
+            </div>
+            
+            <div class="mb-3">
+                <small class="form-text text-muted">
+                    Markdown記法を使用できます。見出し、太字、斜体、リスト、コードブロック、リンクなどが利用可能です。
+                </small>
+            </div>
+            
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">更新する</button>
+                <a href="{{ url_for('post_detail', id=post.id) }}" class="btn btn-outline-secondary">キャンセル</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function adjustTextareaHeight(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+}
+
+const textarea = document.getElementById('content');
+adjustTextareaHeight(textarea);
+textarea.addEventListener('input', function() {
+    adjustTextareaHeight(this);
+});
+</script>
+{% endblock %}
