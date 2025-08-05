@@ -13,7 +13,7 @@
 | 39 | 2025/08/02 | `day95-chat-ui`         | ChatGPT風UI（Streamlit） | OpenAI連携、シンプルチャットUI構築                |     ✅|
 | 40 | 2025/08/03 | `day96-db-crud-app`     | DB連携CRUDアプリ        | SQLAlchemy + Flask、DB構造の実装と操作        |     ✅|
 | 41 | 2025/08/04 | `day97-image-gallery`   | 画像ギャラリー               | ファイル管理＋Web表示、アップロード処理                |     ✅|
-| 42 |            | `day98-markdown-blog`   | Markdown対応ブログ         | Flask-Markdown、ファイル読み込み              |      |
+| 42 | 2025/08/05 | `day98-markdown-blog`   | Markdown対応ブログ         | Flask-Markdown、ファイル読み込み              |     ✅|
 | 43 |            | `day99-account-login`   | ログイン認証付きアプリ           | Flask-Login、セッション管理                  |      |
 | 44 |            | `day100-fullstack-todo` | ✅ 集大成：DB連携ToDoアプリ     | Flask + MySQL + Bootstrap + CRUD完全実装 |      |
 
