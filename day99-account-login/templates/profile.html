@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}プロフィール - ログイン認証アプリ{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title mb-4">プロフィール</h2>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <strong>ユーザーID:</strong>
+                    </div>
+                    <div class="col-sm-9">
+                        {{ current_user.id }}
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <strong>ユーザー名:</strong>
+                    </div>
+                    <div class="col-sm-9">
+                        {{ current_user.username }}
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <strong>メールアドレス:</strong>
+                    </div>
+                    <div class="col-sm-9">
+                        {{ current_user.email }}
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <strong>登録日時:</strong>
+                    </div>
+                    <div class="col-sm-9">
+                        {{ current_user.created_at.strftime('%Y年%m月%d日 %H:%M') }}
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="alert alert-info">
+                    <h5>セキュリティ情報</h5>
+                    <ul class="mb-0">
+                        <li>パスワードは安全にハッシュ化されて保存されています</li>
+                        <li>セッションは自動的に管理されています</li>
+                        <li>「ログイン状態を保持」を選択した場合、一定期間ログインが維持されます</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">ダッシュボードに戻る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

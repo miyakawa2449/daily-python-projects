@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}ホーム - ログイン認証アプリ{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body text-center py-5">
+                <h1 class="display-4 mb-4">ログイン認証アプリへようこそ</h1>
+                <p class="lead mb-4">
+                    Flask-Loginを使用したユーザー認証システムのデモアプリケーションです。
+                </p>
+                
+                {% if current_user.is_authenticated %}
+                    <p class="mb-4">
+                        <strong>{{ current_user.username }}</strong>さん、ログイン中です。
+                    </p>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg me-3">ダッシュボードへ</a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary btn-lg">ログアウト</a>
+                {% else %}
+                    <p class="mb-4">
+                        アカウントを作成してログインしてください。
+                    </p>
+                    <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg me-3">新規登録</a>
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg">ログイン</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">機能一覧</h5>
+                <ul class="list-unstyled">
+                    <li>✅ ユーザー登録（メールアドレス・パスワード）</li>
+                    <li>✅ ログイン・ログアウト機能</li>
+                    <li>✅ セッション管理（Remember Me機能付き）</li>
+                    <li>✅ パスワードのハッシュ化</li>
+                    <li>✅ ログイン必須ページの保護</li>
+                    <li>✅ フラッシュメッセージ表示</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
