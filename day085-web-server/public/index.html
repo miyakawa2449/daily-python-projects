@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Server</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .original-content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .system-info {
+            margin: 30px 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .info-card h3 {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-card li {
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .metric {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 5px 0;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #FFD700, #FF6B6B);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .timestamp {
+            font-size: 0.9em;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .error {
+            background: rgba(255, 0, 0, 0.2);
+            color: #FFB6B6;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #FF6B6B;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Python Web Server Dashboard</h1>
+        
+        <!-- 元のコンテンツ -->
+        <div class="original-content">
+            <h2>📄 シンプルサーバー</h2>
+            <p>このサーバーは、静的なHTMLファイルを提供します。</p>
+            <img src="sample.jpg" alt="サンプル画像">
+            <p>画像は、同じディレクトリにある <code>sample.jpg</code> から読み込まれます。</p>
+            <p>このページは、シンプルなWebサーバーのテスト用に作成されました。</p>
+            <p>サーバーの動作を確認するために、ブラウザでこのページを開いてください。</p>
+        </div>
+        
+        <!-- ここにPythonで生成されたシステム情報が埋め込まれます -->
+        <div style="background: rgba(255, 255, 0, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0;">
+            <h3>📊 システム情報</h3>
+            <p><em>最新の情報を表示するには <code>python app.py</code> を実行してください</em></p>
+            <p>🕐 最終更新: <span class="metric">2025-07-23 19:06:26</span></p>
+            <p>🐍 Python: <span class="metric">3.10.18</span></p>
+        </div>
+        
+        
+    <div class="system-info">
+        <h2>🖥️ システム情報 <span class="timestamp">(2025-07-23 19:06:26)</span></h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>📊 基本情報</h3>
+                <ul>
+                    <li><strong>OS:</strong> Darwin 24.5.0</li>
+                    <li><strong>アーキテクチャ:</strong> arm64</li>
+                    <li><strong>プロセッサ:</strong> arm</li>
+                    <li><strong>Python:</strong> 3.10.18</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>⚡ パフォーマンス</h3>
+                <ul>
+                    <li><strong>CPUコア:</strong> 14コア</li>
+                    <li><strong>CPU使用率:</strong> 
+                        <span class="metric">1.3%</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 1.3%"></div>
+                        </div>
+                    </li>
+                    <li><strong>メモリ使用率:</strong> 
+                        <span class="metric">47.1%</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 47.1%"></div>
+                        </div>
+                    </li>
+                    <li><strong>メモリ:</strong> 25.38GB / 48.0GB 利用可能</li>
+                    <li><strong>ディスク使用率:</strong> 1.2%</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>🌐 ネットワーク</h3>
+                <ul>
+                    <li><strong>lo0:</strong> 127.0.0.1</li><li><strong>en0:</strong> 192.168.86.246</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>📈 プロセス（CPU上位）</h3>
+                <ul>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+        
+        <footer>
+            <p>&copy; 2025 シンプルサーバー | 🐍 Powered by Python</p>
+        </footer>
+    </div>
+</body>
+</html>

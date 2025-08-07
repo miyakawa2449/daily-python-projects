@@ -239,4 +239,5 @@ day93-img-editor/static/uploads/*.*
 day97-image-gallery/uploads/*
 !day97-image-gallery/uploads/.gitkeep
 day97-image-gallery/thumbnails/*
-!day97-image-gallery/thumbnails/.gitkeep
+!day97-image-gallery/thumbnails/.gitkeepday084-sendmail/token.json
+**/token.json
