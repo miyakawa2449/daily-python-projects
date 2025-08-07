@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}{{ todo.title }} - ToDoアプリ{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            {% if todo.image_path %}
+                <img src="{{ url_for('static', filename='uploads/' + todo.image_path) }}" 
+                     class="card-img-top" alt="ToDo画像" style="max-height: 400px; object-fit: contain;">
+            {% endif %}
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h1 class="card-title {% if todo.completed %}text-decoration-line-through{% endif %}">
+                        {{ todo.title }}
+                    </h1>
+                    <div>
+                        <span class="badge bg-{{ 'danger' if todo.priority == 'high' else 'warning' if todo.priority == 'medium' else 'secondary' }} fs-6">
+                            優先度: {{ '高' if todo.priority == 'high' else '中' if todo.priority == 'medium' else '低' }}
+                        </span>
+                        {% if todo.completed %}
+                            <span class="badge bg-success fs-6">完了</span>
+                        {% else %}
+                            <span class="badge bg-primary fs-6">未完了</span>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <p class="text-muted">
+                        <i class="bi bi-calendar-plus"></i> 作成日: {{ todo.get_jst_created_at().strftime('%Y年%m月%d日 %H:%M') }} JST
+                        {% if todo.due_date %}
+                            <br><i class="bi bi-calendar-event"></i> 期限: {{ todo.due_date.strftime('%Y年%m月%d日') }}
+                        {% endif %}
+                    </p>
+                </div>
+                
+                {% if todo.description_html %}
+                    <div class="card bg-light mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">詳細説明</h5>
+                            <div class="markdown-content">
+                                {{ todo.description_html|safe }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{{ url_for('todo.index') }}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> 一覧に戻る
+                    </a>
+                    <a href="{{ url_for('todo.toggle', id=todo.id) }}" 
+                       class="btn btn-{{ 'success' if not todo.completed else 'warning' }}">
+                        <i class="bi bi-{{ 'check-square' if not todo.completed else 'arrow-counterclockwise' }}"></i>
+                        {{ '完了にする' if not todo.completed else '未完了に戻す' }}
+                    </a>
+                    <a href="{{ url_for('todo.edit', id=todo.id) }}" class="btn btn-primary">
+                        <i class="bi bi-pencil"></i> 編集
+                    </a>
+                    <a href="{{ url_for('todo.delete', id=todo.id) }}" 
+                       class="btn btn-danger"
+                       onclick="return confirm('本当に削除しますか？');">
+                        <i class="bi bi-trash"></i> 削除
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

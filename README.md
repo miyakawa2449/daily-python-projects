@@ -15,7 +15,7 @@
 | 41 | 2025/08/04 | `day97-image-gallery`   | 画像ギャラリー               | ファイル管理＋Web表示、アップロード処理                |     ✅|
 | 42 | 2025/08/05 | `day98-markdown-blog`   | Markdown対応ブログ         | Flask-Markdown、ファイル読み込み              |     ✅|
 | 43 | 2025/08/06 | `day99-account-login`   | ログイン認証付きアプリ           | Flask-Login、セッション管理                  |    ✅|
-| 44 |            | `day100-fullstack-todo` | ✅ 集大成：DB連携ToDoアプリ     | Flask + MySQL + Bootstrap + CRUD完全実装 |      |
+| 44 | 2025/08/07 | `day100-fullstack-todo` | ✅ 集大成：DB連携ToDoアプリ     | Flask + MySQL + Bootstrap + CRUD完全実装 |    ✅|
 
 
 📝 Python 100日チャレンジ（Day 57〜86）
